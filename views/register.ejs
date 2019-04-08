@@ -28,7 +28,8 @@
                     <label>รหัสพนักงาน</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="EMP_ID" name="ID_employee" required maxlength="8" minlength="8">
+                    <input type="text" id="EMP_ID" name="ID_employee" onkeyup="checkInputID()"
+                        onkeypress="checkInputID()" maxlength="8" minlength="8">
                 </div>
             </div>
 
@@ -37,7 +38,7 @@
                     <label>รหัสผ่าน</label>
                 </div>
                 <div class="col-75">
-                    <input type="password" id="EMP_password" name="password" required minlength="8">
+                    <input type="password" id="EMP_password" name="password" maxlength="15">
                 </div>
             </div>
 
@@ -46,7 +47,8 @@
                     <label>ชื่อ</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="EMP_fname" name="firstname" required maxlength="30">
+                    <input type="text" id="EMP_fname" name="firstname" onkeyup="checkInputFname()"
+                        onkeypress="checkInputFname()" maxlength="20">
                 </div>
             </div>
 
@@ -55,7 +57,8 @@
                     <label>นามสกุล</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="EMP_lname" name="lastname" required maxlength="30">
+                    <input type="text" id="EMP_lname" name="lastname" onkeyup="checkInputLname()"
+                        onkeypress="checkInputLname()" maxlength="20">
                 </div>
             </div>
 
@@ -64,7 +67,7 @@
                     <label>วัน - เดือน - ปีเกิด</label>
                 </div>
                 <div class="col-75">
-                    <input type="date" id="EMP_birthDate" name="birthday" required>
+                    <input type="date" id="EMP_birthDate" name="birthday">
                     <!-- <select name="birth_date" id="EMP_bday" style="width: 50px;" required>
                         <option disabled selected hidden>วัน</option>
                         <option value="1">1</option>
@@ -175,7 +178,7 @@
                     <label>เพศ</label>
                 </div>
                 <div class="col-75">
-                    <select name="gender" id="EMP_gender" style="width: 100px;" required>
+                    <select name="gender" id="EMP_gender" style="width: 100px;">
                         <option disabled selected hidden>เพศ</option>
                         <option value="ชาย">ชาย</option>
                         <option value="หญิง">หญิง</option>
@@ -188,7 +191,7 @@
                     <label>ที่อยู่</label>
                 </div>
                 <div class="col-75">
-                    <textarea id="EMP_address" name="address" style="height:150px" required maxlength="300"></textarea>
+                    <textarea id="EMP_address" name="address" style="height:150px" maxlength="150"></textarea>
                 </div>
             </div>
 
@@ -197,7 +200,8 @@
                     <label>เบอร์ติดต่อ</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="EMP_tel" name="telephone" required maxlength="10" minlength="10">
+                    <input type="text" id="EMP_tel" name="telephone" onkeyup="checkInputTel()"
+                        onkeypress="checkInputTel()" maxlength="10" minlength="10">
                 </div>
             </div>
 
@@ -206,7 +210,7 @@
                     <label>E-mail</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="EMP_email" name="email" required>
+                    <input type="text" id="EMP_email" name="email" maxlength="30">
                 </div>
             </div>
 
@@ -215,7 +219,7 @@
                     <label>ตำแหน่ง</label>
                 </div>
                 <div class="col-75">
-                    <select name="position" id="EMP_type" style="width: 120px;" required>
+                    <select name="position" id="EMP_type" style="width: 120px;">
                         <option disabled selected hidden>ตำแหน่ง</option>
                         <option value="เจ้าหน้าที่ธุรการ">เจ้าหน้าที่ธุรการ</option>
                         <option value="พนักงานขาย">พนักงานขาย</option>

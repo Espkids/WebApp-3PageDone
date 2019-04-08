@@ -1,10 +1,39 @@
 function checkCorrect() {
-    if (checkNull() == 0) {
-        alert("กรุณากรอกข้อมูลให้ครบ")
+    var emp_id = document.getElementById("EMP_ID").value;
+    var emp_fname = document.getElementById("EMP_fname").value;
+    var emp_lname = document.getElementById("EMP_lname").value;
+    var emp_birthDate = document.getElementById("EMP_birthDate").value;
+    var emp_gender = document.getElementById("EMP_gender").value;
+    var emp_type = document.getElementById("EMP_type").value;
+    var emp_address = document.getElementById("EMP_address").value;
+    var emp_telnumber = document.getElementById("EMP_tel").value;
+    var emp_email = document.getElementById("EMP_email").value;
+    var emp_password = document.getElementById("EMP_password").value;
+
+    if (emp_id == "") {
+        alert("กรุณากรอก รหัสพนักงาน")
+    } else if (emp_password == "") {
+        alert("กรุณากรอก รหัสผ่าน")
+    } else if (emp_fname == "") {
+        alert("กรุณากรอก ชื่อ")
+    } else if (emp_lname == "") {
+        alert("กรุณากรอก นามสกุล")
+    } else if (emp_birthDate == "") {
+        alert("กรุณาเลือก วัน-เดือน-ปีเกิด")
+    } else if (emp_gender == "เพศ") {
+        alert("กรุณาเลือก เพศ")
+    } else if (emp_address == "") {
+        alert("กรุณากรอก ที่อยู่")
+    } else if (emp_telnumber == "") {
+        alert("กรุณากรอกเบอร์ติดต่อ")
+    } else if (emp_email == "") {
+        alert("กรุณากรอก E-mail")
+    } else if (emp_type == "ตำแหน่ง") {
+        alert("กรุณาเลือก ตำแหน่ง")
     } else if (checkEmployeeID() == 0) {
         alert("รหัสพนักงานต้องเป็นตัวเลขเท่านั้นและความยาวเท่ากับ 8 ตัวอักษร")
     } else if (checkEmployeePassword() == 0) {
-        alert("รหัสผ่านต้องมีความยาวมากกว่าหรือเท่ากับ 8 ตัวอักษร")
+        alert("รหัสผ่านต้องมีความยาวระหว่าง 8 - 15 ตัวอักษร")
     } else if (checkFname() == 0) {
         alert("ชื่อต้องเป็นตัวอักษรเท่านั้น")
     } else if (checkLname() == 0) {
@@ -89,7 +118,7 @@ function checkFname() {
 function checkEmployeePassword() {
     var emp_password = document.getElementById("EMP_password").value;
 
-    if (emp_password.length < 8) {
+    if (emp_password.length < 8 || emp_password.length > 15) {
         document.getElementById('EMP_password').value = "";
         return 0;
     } else {
@@ -108,23 +137,30 @@ function checkEmployeeID() {
     }
 }
 
-function checkNull() {
-    var emp_id = document.getElementById("EMP_ID").value;
-    var emp_fname = document.getElementById("EMP_fname").value;
-    var emp_lname = document.getElementById("EMP_lname").value;
-    var emp_birthDate = document.getElementById("EMP_birthDate").value;
-    var emp_gender = document.getElementById("EMP_gender").value;
-    var emp_type = document.getElementById("EMP_type").value;
-    var emp_address = document.getElementById("EMP_address").value;
-    var emp_telnumber = document.getElementById("EMP_tel").value;
-    var emp_email = document.getElementById("EMP_email").value;
-    var emp_password = document.getElementById("EMP_password").value;
+function checkInputID(){
+    var data = document.getElementById("EMP_ID").value;
+    if (data.charAt(data.length-1) != parseInt(data.charAt(data.length-1))) {
+        document.getElementById("EMP_ID").value = data.substring(0,data.length-1);
+    }
+}
 
-    if (emp_id == "" || emp_password == "" || emp_fname == "" || emp_lname == "" ||
-        emp_birthDate == "" || emp_gender == "เพศ" || emp_type == "ตำแหน่ง" ||
-        emp_address == "" || emp_telnumber == "" || emp_email == "") {
-        return 0;
-    } else {
-        return 1;
+function checkInputFname(){
+    var data = document.getElementById("EMP_fname").value;
+    if (data.charAt(data.length-1) == parseInt(data.charAt(data.length-1))) {
+        document.getElementById("EMP_fname").value = data.substring(0,data.length-1);
+    }
+}
+
+function checkInputLname(){
+    var data = document.getElementById("EMP_lname").value;
+    if (data.charAt(data.length-1) == parseInt(data.charAt(data.length-1))) {
+        document.getElementById("EMP_lname").value = data.substring(0,data.length-1);
+    }
+}
+
+function checkInputTel(){
+    var data = document.getElementById("EMP_tel").value;
+    if (data.charAt(data.length-1) != parseInt(data.charAt(data.length-1))) {
+        document.getElementById("EMP_tel").value = data.substring(0,data.length-1);
     }
 }

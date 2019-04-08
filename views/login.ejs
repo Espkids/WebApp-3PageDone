@@ -17,16 +17,17 @@
                 <th class="th1">
 
                     <img src="/assets/logo.png" class="logo" alt="Logo">
-                    <form method="post" action="/home/login">
+                    <form id="userLogin" method="post" action="/home/login">
                         <div>
                             <p>
                                 <h3 class="txt"> Username </h3>
                                 <input id="username" type="text" name="username" size="40"
-                                    placeholder="Type your username" required>
+                                    placeholder="Type your username" onkeyup="checkInputID()"
+                                    onkeypress="checkInputID()" maxlength="8">
 
                                 <h3 class="txt"> Password </h3>
                                 <input id="password" type="password" name="password" size="40"
-                                    placeholder="Type your password" required>
+                                    placeholder="Type your password" maxlength="15">
 
                                 <a href="/home/forgotpassword">
                                     <h5 class="txt" style="color: blue"> ลืมรหัสผ่าน </h5>
@@ -36,13 +37,11 @@
                         <% if(err){ %>
                         <p style="color: red">username หรือ password ไม่ถูกต้อง.</p>
                         <% } %>
-
-                        <button class="button1" type="submit" name="username" style="float: left" >
-                            เข้าสู่ระบบ </button>
-                        <button class="button2" type="text" name="password" style="float: right"
-                            onclick="location.href = '/home/register'">
-                            สมัครสมาชิก </button>
                     </form>
+                    <button class="button1" style="float: left" onclick="checkLogin()">
+                        เข้าสู่ระบบ </button>
+                    <button class="button2" type="text" style="float: right" onclick="location.href = '/home/register'">
+                        สมัครสมาชิก </button>
                 </th>
             </tr>
         </table>
